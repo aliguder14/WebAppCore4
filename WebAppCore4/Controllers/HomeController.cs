@@ -41,6 +41,7 @@ namespace WebAppCore4.Controllers
         {
             ViewData["Mesaj"] = _localizer["Mesaj"];
             return View();
+
         }
 
         public IActionResult Privacy()

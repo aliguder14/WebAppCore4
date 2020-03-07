@@ -1,0 +1,77 @@
+﻿@model ArabaModel
+@{
+    ViewData["Title"] = "BootStrapOrnekleri";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+
+    <div class="container">
+        <h1>BootStrap Örnekleri</h1>
+
+        <form>
+            <div class="form-group">
+                <label>Marka</label>
+                <input type="text" class="form-control" asp-for="Marka" />
+
+            </div>
+
+            <div class="form-group">
+                <label>Model</label>
+                <input type="text" class="form-control" asp-for="Model" />
+            </div>
+
+            <div class="form-group">
+                <label>Renk</label>
+                <input type="text" class="form-control" asp-for="Renk" />
+            </div>
+
+            <div class="form-group">
+                <label>Yapım Yılı</label>
+                <input type="number" class="form-control" asp-for="YapimYili" />
+            </div>
+
+            <button type="button"
+                    class="btn btn-info btn-lg"
+                    data-toggle="modal"
+                    data-target="#mdlArabaBilgileri">
+                Bilgileri Göster
+            </button>
+
+
+        </form>
+
+        <div class="modal fade" id="mdlArabaBilgileri" role="dialog">
+            <div class="modal-dialog">
+
+
+                <!-- Modal content-->
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h4 class="modal-title">Araba Bilgileri</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <p>Araba Markası: <span>@Model.Marka</span></p>
+                        <p>Araba Model: <span>@Model.Model</span></p>
+                        <p>Araba Rengi: <span>@Model.Renk</span></p>
+                        <p>Yapım Yılı: <span>@Model.YapimYili</span></p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Tamam</button>
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Kapat</button>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+

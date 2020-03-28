@@ -10,5 +10,6 @@ namespace WebAppCore4.Intercafes
         public string GazaBas(int gazMiktari);
         public void FreneBas();
 
+
     }
 }

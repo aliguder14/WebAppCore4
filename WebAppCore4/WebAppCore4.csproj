@@ -51,8 +51,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AOS.Domain\AOS.Domain.csproj" />
+    <ProjectReference Include="..\AOS.InterfaceBilesen\AOS.InterfaceBilesen.csproj" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+  </PropertyGroup>
 
 
 </Project>

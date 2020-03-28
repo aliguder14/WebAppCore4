@@ -5,7 +5,11 @@ VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppCore4", "WebAppCore4\WebAppCore4.csproj", "{6ACDA68B-ED08-40BC-865B-148E2128266D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOS.Domain", "AOS.Domain\AOS.Domain.csproj", "{51731E8B-CB9E-48DC-BE15-BA32690BF18A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AOS.Domain", "AOS.Domain\AOS.Domain.csproj", "{51731E8B-CB9E-48DC-BE15-BA32690BF18A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOS.Bilesen", "AOS.Bilesen\AOS.Bilesen.csproj", "{84E5266F-3936-46C4-B83C-8354E9A27A4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOS.InterfaceBilesen", "AOS.InterfaceBilesen\AOS.InterfaceBilesen.csproj", "{78BDDC5C-17E7-4436-AFB7-C0D002B38A6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{51731E8B-CB9E-48DC-BE15-BA32690BF18A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51731E8B-CB9E-48DC-BE15-BA32690BF18A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51731E8B-CB9E-48DC-BE15-BA32690BF18A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84E5266F-3936-46C4-B83C-8354E9A27A4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84E5266F-3936-46C4-B83C-8354E9A27A4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84E5266F-3936-46C4-B83C-8354E9A27A4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84E5266F-3936-46C4-B83C-8354E9A27A4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78BDDC5C-17E7-4436-AFB7-C0D002B38A6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78BDDC5C-17E7-4436-AFB7-C0D002B38A6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78BDDC5C-17E7-4436-AFB7-C0D002B38A6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78BDDC5C-17E7-4436-AFB7-C0D002B38A6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

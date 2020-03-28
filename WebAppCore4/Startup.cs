@@ -54,12 +54,11 @@ namespace WebAppCore4
 
             IMapper mapper = mappingConfig.CreateMapper();
             services.AddSingleton(mapper);
-            services.AddScoped<IArabaManager, ArabaManager>();
+            services.AddTransient<IArabaManager, ArabaManager>();
 
             services.Configure<CustomConfig>(Configuration.GetSection("CustomConfig"));
 
-
-            //services.AddDbContext<AOSContext>(options =>options.UseSqlServer(Configuration.GetConnectionString("AOSContext")));
+            services.AddDbContext<AOSContext>(options =>options.UseSqlServer(Configuration.GetConnectionString("AOSContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -108,6 +107,11 @@ namespace WebAppCore4
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapControllerRoute(
+                    name: "ornek",
+                    pattern: "ornek2",
+                    defaults : new { controller = "Home", action= "BootStrapOrnekleriView" });
             });
         }
     }

@@ -6,5 +6,9 @@ namespace AOS.Bilesen
 {
     public class BilesenHelper
     {
+        public void Hesapla()
+        {
+
+        }
     }
 }

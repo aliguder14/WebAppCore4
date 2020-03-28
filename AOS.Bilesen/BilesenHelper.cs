@@ -10,5 +10,9 @@ namespace AOS.Bilesen
         {
 
         }
+
+        public void Basla()
+        {
+        }
     }
 }

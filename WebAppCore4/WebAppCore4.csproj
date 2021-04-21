@@ -15,6 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!--<None Remove="Dockerfile" />-->
+    <None Remove="Dockerfile" />
     <None Remove="personelIslmeleri.ts" />
   </ItemGroup>
 
@@ -29,6 +31,10 @@
     <None Include="wwwroot\lib\angular.js\bundleAngular.min.js" />
   </ItemGroup>
 
+  <ItemGroup>
+  <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  
   <ItemGroup>
     <PackageReference Include="automapper" Version="9.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
@@ -46,17 +52,59 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.10" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+    <PackageReference Include="Serilog.Extensions.Logging.File" Version="2.0.0" />
+    <PackageReference Include="System.ServiceModel.Duplex" Version="4.4.*" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.4.*" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.4.*" />
+    <PackageReference Include="System.ServiceModel.Security" Version="4.4.*" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AOS.Domain\AOS.Domain.csproj" />
     <ProjectReference Include="..\AOS.InterfaceBilesen\AOS.InterfaceBilesen.csproj" />
+    <ProjectReference Include="..\AOS.Repository\AOS.Repository.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Bilesenler\AOS.Bilesen.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
   </ItemGroup>
 
   <PropertyGroup>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <UserSecretsId>a4f882cc-de5c-4cc1-bd27-e2fbb9e9ecf3</UserSecretsId>
+    <!--<DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>-->
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="$(ProjectDir)\wwwroot\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="$(ProjectDir)\Logs\**" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\lib\react\**" />
+    <Content Remove="wwwroot\lib\react\**" />
+    <EmbeddedResource Remove="wwwroot\lib\react\**" />
+    <None Remove="wwwroot\lib\react\**" />
+    <TypeScriptCompile Remove="wwwroot\lib\react\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Logs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="C:\Users\ali\Documents\VisualStudio2019Projeleri\WebAppCore4\WebAppCore4\Logs\LogVerileri-20200406.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
 </Project>

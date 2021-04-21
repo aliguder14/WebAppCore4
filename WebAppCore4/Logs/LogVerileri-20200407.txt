@@ -1,0 +1,7 @@
+2020-04-07T00:04:28.7537872+03:00  [INF] Now listening on: "https://localhost:5004" (d826f4b8)
+2020-04-07T00:04:28.7586218+03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-04-07T00:04:28.7587032+03:00  [INF] Hosting environment: "Production" (c3307c92)
+2020-04-07T00:04:28.7587180+03:00  [INF] Content root path: "C:\Users\ali\Documents\VisualStudio2019Projeleri\WebAppCore4\WebAppCore4" (b5d60022)
+2020-04-07T00:04:30.6370863+03:00 0HLUQDOC8633N:00000001 [INF] Ana sayfaya giriş yapıldı. (c5341f50)
+2020-04-07T00:05:26.7603258+03:00 0HLUQDOC8633N:00000023 [INF] Bootstrap örnek sayfasına giriş yapıldı. (bcf1ae2c)
+2020-04-07T00:05:30.7627140+03:00 0HLUQDOC8633N:00000023 [INF] BootStrapOrnekleriView sayfası çalıştı (0437753d)

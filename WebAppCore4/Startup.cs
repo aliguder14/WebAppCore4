@@ -21,6 +21,11 @@ using WebAppCore4.Managers;
 using WebAppCore4.CustomConfigler;
 using System.Globalization;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.Extensions.Options;
+using WebAppCore4.FilterAttributes;
+using Microsoft.Extensions.Logging;
+using AOS.Repository;
+using System.Reflection;
 
 namespace WebAppCore4
 {
@@ -44,6 +49,14 @@ namespace WebAppCore4
                 options.ResourcesPath = "Resources";
             });
 
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(10);//You can set Time   
+            });
+
+            services.AddHttpContextAccessor();
+            services.AddSingleton<SessionManger>();
+
 
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
@@ -56,13 +69,37 @@ namespace WebAppCore4
             services.AddSingleton(mapper);
             services.AddTransient<IArabaManager, ArabaManager>();
 
-            services.Configure<CustomConfig>(Configuration.GetSection("CustomConfig"));
+            //services.AddTransient<ArabaRepository>();
 
-            services.AddDbContext<AOSContext>(options =>options.UseSqlServer(Configuration.GetConnectionString("AOSContext")));
+            Assembly assembly = Assembly.Load("AOS.Repository");
+
+            foreach (Type repositoryType in assembly.GetTypes().Where(x=>x.BaseType == typeof(Repository)))
+            {
+                services.AddTransient(repositoryType);
+            }
+
+            services.Configure<CustomConfig>(Configuration);
+            services.Configure<CustomConfig>(Configuration.GetSection("CustomConfig"));
+            services.AddScoped<VeritabaniAtrribute>();
+
+            services.AddScoped(sp => sp.GetService<IOptionsSnapshot<CustomConfig>>().Value);
+
+
+            services.AddDbContext<AOSContext>(options => {
+                options.UseSqlServer(Configuration.GetConnectionString("AOSContext"));
+                options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+                    });
+            services.AddMvc();
+
+            //services.AddMvc(
+            //config =>
+            //{
+            //    config.Filters.Add(new VeritabaniAtrribute());
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
@@ -89,12 +126,12 @@ namespace WebAppCore4
                 RequestCultureProviders = new List<IRequestCultureProvider>
                 {
                     new QueryStringRequestCultureProvider(),
-                    new CookieRequestCultureProvider(),
-                    new AcceptLanguageHeaderRequestCultureProvider()
+                    new CookieRequestCultureProvider()
                 }
             });
 
-            app.UseRequestLocalization();
+            app.UseSession();
+            //app.UseRequestLocalization();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -111,8 +148,10 @@ namespace WebAppCore4
                 endpoints.MapControllerRoute(
                     name: "ornek",
                     pattern: "ornek2",
-                    defaults : new { controller = "Home", action= "BootStrapOrnekleriView" });
+                    defaults: new { controller = "Home", action = "Index" });
             });
+
+            loggerFactory.AddFile("Logs/LogVerileri.txt");
         }
     }
 }

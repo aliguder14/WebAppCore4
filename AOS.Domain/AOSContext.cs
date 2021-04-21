@@ -7,6 +7,7 @@ using System.Text;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 using System.Linq;
+using AOS.Domain.Interceptors;
 
 namespace AOS.Domain
 {
@@ -34,7 +35,6 @@ namespace AOS.Domain
             return deger;
         }
 
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //ConfigurationExtensions.GetConnectionString(this.con)
@@ -54,10 +54,13 @@ namespace AOS.Domain
             //    );
 
             optionsBuilder.UseSqlServer(veriTabaniBaglantiBilgileri);
+            optionsBuilder.AddInterceptors(new ArabaCommandInterceptor());
         }
 
         public AOSContext(DbContextOptions<AOSContext> options) : base(options)
         {
+            base.ChangeTracker.LazyLoadingEnabled = false;
+            base.ChangeTracker.AutoDetectChangesEnabled = false;
         }
 
 

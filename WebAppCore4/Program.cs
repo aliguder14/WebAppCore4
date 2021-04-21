@@ -21,13 +21,27 @@ namespace WebAppCore4
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseKestrel()
+                    .UseUrls("https://localhost:5004")
+                    .UseContentRoot(Directory.GetCurrentDirectory())
+                    .UseIISIntegration()
+                    .UseIIS()
+                    .UseStartup<Startup>();
 
-                    //.UseStartup<Startup>()
-                    //.UseKestrel()
                     //.UseContentRoot(Directory.GetCurrentDirectory())
                     //.UseIISIntegration()
                     //.UseIIS();
-                });
+                }).ConfigureAppConfiguration((hostingContext, config) =>
+                 {
+                     config.SetBasePath(Directory.GetCurrentDirectory());
+                     config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+                     //config.AddJsonFile("appsettings.Development.json", optional: false, reloadOnChange: true);
+                     config.AddEnvironmentVariables();
+                 }).ConfigureLogging(logBuilder =>
+                 {
+                     logBuilder.ClearProviders(); // removes all providers from LoggerFactory
+                     logBuilder.AddConsole();
+                     //logBuilder.AddTraceSource("Information, ActivityTracing"); // Add Trace listener provider
+                 });
     }
 }

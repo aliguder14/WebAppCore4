@@ -3,10 +3,17 @@
 
 }
 
-    <div class="text-center">
+    <div class="text-left">
         <h1 class="display-4">Welcome</h1>
         <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+        <button class="btn btn-info" data-toggle="collapse" data-target="#sessionlar" value="Aç Yazıyı">Aç Yazıyı</button>
+
         <p>@ViewData["Mesaj"]</p>
         <p>@ViewData["DonusDegeri"]</p>
+        <div id="sessionlar" class="collapse">
+            <p>@ViewBag.SessionAdi</p>
+            <p>@ViewBag.SessionKisiNo</p>
 
+
+        </div>
     </div>

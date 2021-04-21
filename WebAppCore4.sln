@@ -7,9 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppCore4", "WebAppCore4\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AOS.Domain", "AOS.Domain\AOS.Domain.csproj", "{51731E8B-CB9E-48DC-BE15-BA32690BF18A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOS.Bilesen", "AOS.Bilesen\AOS.Bilesen.csproj", "{84E5266F-3936-46C4-B83C-8354E9A27A4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AOS.Bilesen", "AOS.Bilesen\AOS.Bilesen.csproj", "{84E5266F-3936-46C4-B83C-8354E9A27A4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOS.InterfaceBilesen", "AOS.InterfaceBilesen\AOS.InterfaceBilesen.csproj", "{78BDDC5C-17E7-4436-AFB7-C0D002B38A6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AOS.InterfaceBilesen", "AOS.InterfaceBilesen\AOS.InterfaceBilesen.csproj", "{78BDDC5C-17E7-4436-AFB7-C0D002B38A6B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToplamaGrpcService1", "..\ToplamaGrpcService1\ToplamaGrpcService1.csproj", "{3712B8BF-0190-46DA-BD80-777441811D69}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AOS.Repository", "AOS.Repository\AOS.Repository.csproj", "{595938A1-4599-4CC5-92F6-A2D1297FFCD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{78BDDC5C-17E7-4436-AFB7-C0D002B38A6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78BDDC5C-17E7-4436-AFB7-C0D002B38A6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78BDDC5C-17E7-4436-AFB7-C0D002B38A6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3712B8BF-0190-46DA-BD80-777441811D69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3712B8BF-0190-46DA-BD80-777441811D69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3712B8BF-0190-46DA-BD80-777441811D69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3712B8BF-0190-46DA-BD80-777441811D69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{595938A1-4599-4CC5-92F6-A2D1297FFCD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{595938A1-4599-4CC5-92F6-A2D1297FFCD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{595938A1-4599-4CC5-92F6-A2D1297FFCD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{595938A1-4599-4CC5-92F6-A2D1297FFCD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

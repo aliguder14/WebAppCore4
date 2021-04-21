@@ -1,0 +1,7 @@
+2021-04-21T10:57:12.4219843+03:00  [INF] Now listening on: "https://localhost:5004" (d826f4b8)
+2021-04-21T10:57:12.4280559+03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-04-21T10:57:12.4281776+03:00  [INF] Hosting environment: "Production" (c3307c92)
+2021-04-21T10:57:12.4282064+03:00  [INF] Content root path: "C:\Users\ali\Documents\VisualStudioDosyalari\VisualStudio2019Projeleri\WebAppCore4\WebAppCore4" (b5d60022)
+2021-04-21T10:57:17.1122735+03:00 0HM84JC98ULHE:00000001 [INF] Ana sayfaya giriş yapıldı. (c5341f50)
+2021-04-21T10:57:34.9145484+03:00 0HM84JC98ULHE:00000013 [ERR] Beklenmeyen 1. hata oluştu 2 oluşacağını düşünmüyorum (f7fb3bb7)
+2021-04-21T10:57:40.8211138+03:00 0HM84JC98ULHE:00000015 [INF] Bootstrap örnek sayfasına giriş yapıldı. (bcf1ae2c)
